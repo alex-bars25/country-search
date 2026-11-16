@@ -1,0 +1,79 @@
+body {
+  font-family: system-ui, sans-serif;
+  max-width: 640px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+input {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+.status {
+  min-height: 1.5em;
+  margin: 0.5rem 0;
+  color: #555;
+}
+.results {
+  list-style: none;
+  padding: 0;
+}
+.card {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+}
+.card img {
+  width: 40px;
+}
+.status {
+  min-height: 1.5em;
+  margin: 0.5rem 0;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.spinner {
+  width: 1em;
+  height: 1em;
+  border: 2px solid #ccc;
+  border-top-color: #555;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.detail {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  background: #fafafa;
+}
+.detail h2 {
+  margin: 0 0 0.75rem;
+}
+.detail dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.25rem 1rem;
+  margin: 0;
+}
+.detail dt {
+  font-weight: 600;
+}
+.detail dd {
+  margin: 0;
+}
+.detail button {
+  float: right;
+}
