@@ -3,14 +3,24 @@ export interface Debounced<Args extends unknown[]> {
   cancel(): void;
 }
 
-export interface Debounced<Args extends unknown[]> {
-  (...args: Args): void;
-  cancel(): void;
-}
-
 export function debounce<T extends unknown[]>(
-  _fn: (...args: T) => void,
-  _delay: number
+  fn: (...args: T) => void,
+  delay: number
 ): Debounced<T> {
-  throw new Error('debounce: not implemented');
+  let timer: ReturnType<typeof setTimeout> | null = null;
+
+  const debounced = (...args: T): void => {
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(() => {
+      timer = null;
+      fn(...args);
+    }, delay);
+  };
+
+  debounced.cancel = (): void => {
+    if (timer) clearTimeout(timer);
+    timer = null;
+  };
+
+  return debounced;
 }
