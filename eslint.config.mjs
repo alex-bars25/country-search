@@ -10,6 +10,16 @@ export default defineConfig(
   eslintConfigPrettier,
   {
     files: ['**/*.ts'],
+    rules: {
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          caughtErrorsIgnorePattern: '^_',
+        },
+      ],
+    },
     languageOptions: {
       parserOptions: {
         projectService: {
