@@ -1,18 +1,20 @@
-import js from "@eslint/js";
-import { defineConfig, globalIgnores } from "eslint/config";
-import tseslint from "typescript-eslint";
-import eslintConfigPrettier from "eslint-config-prettier";
+import js from '@eslint/js';
+import { defineConfig, globalIgnores } from 'eslint/config';
+import tseslint from 'typescript-eslint';
+import eslintConfigPrettier from 'eslint-config-prettier';
 
 export default defineConfig(
-  globalIgnores(["dist/**", "node_modules/**"]),
+  globalIgnores(['dist/**', 'node_modules/**']),
   js.configs.recommended,
   tseslint.configs.recommended,
   eslintConfigPrettier,
   {
-    files: ["**/*.ts"],
+    files: ['**/*.ts'],
     languageOptions: {
       parserOptions: {
-        projectService: true,
+        projectService: {
+          allowDefaultProject: ['vitest.config.ts'],
+        },
         tsconfigRootDir: import.meta.dirname,
       },
     },
