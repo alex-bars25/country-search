@@ -1,5 +1,12 @@
 import type { CountryRaw, CountryCard } from './types';
 
-export function mapCountryResponse(_raw: CountryRaw): CountryCard {
-  throw new Error('mapCountryResponse: not implemented');
+export function mapCountryResponse(raw: CountryRaw): CountryCard {
+  return {
+    name: raw.name,
+    flag: raw.flags.svg,
+    capital: raw.capital[0] ?? '',
+    region: raw.region,
+    population: raw.population,
+    languages: raw.languages?.map((l) => l.name) ?? [],
+  };
 }
