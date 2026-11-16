@@ -19,6 +19,9 @@ describe('searchCountries', () => {
             region: 'Europe',
             population: 1,
             languages: [{ name: 'Spanish' }],
+            currencies: [{ name: 'Euro', symbol: '€' }],
+            borders: ['FRA', 'PRT'],
+            area: 505990,
           },
         ],
       })
@@ -32,6 +35,9 @@ describe('searchCountries', () => {
         region: 'Europe',
         population: 1,
         languages: ['Spanish'],
+        currencies: ['Euro (€)'],
+        borders: ['FRA', 'PRT'],
+        area: 505990,
       },
     ]);
   });

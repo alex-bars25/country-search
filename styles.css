@@ -52,3 +52,28 @@ input {
     transform: rotate(360deg);
   }
 }
+.detail {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  background: #fafafa;
+}
+.detail h2 {
+  margin: 0 0 0.75rem;
+}
+.detail dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.25rem 1rem;
+  margin: 0;
+}
+.detail dt {
+  font-weight: 600;
+}
+.detail dd {
+  margin: 0;
+}
+.detail button {
+  float: right;
+}

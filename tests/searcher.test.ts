@@ -10,6 +10,9 @@ const card: CountryCard = {
   region: 'Europe',
   population: 1,
   languages: ['Spanish'],
+  currencies: ['Euro (€)'],
+  borders: ['FRA', 'PRT'],
+  area: 505990,
 };
 
 function setup(search: (q: string, s: AbortSignal) => Promise<CountryCard[]>) {
