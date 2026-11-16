@@ -28,4 +28,15 @@ describe('debounce', () => {
 
     expect(fn).not.toHaveBeenCalled();
   });
+
+  it('отменяет запланированный вызов', () => {
+    const fn = vi.fn();
+    const debounced = debounce(fn, 300);
+
+    debounced();
+    debounced.cancel();
+    vi.advanceTimersByTime(300);
+
+    expect(fn).not.toHaveBeenCalled();
+  });
 });
